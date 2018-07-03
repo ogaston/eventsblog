@@ -14,6 +14,9 @@ import { CreateEventComponent } from './events/create-event/create-event.compone
 import { ErrorComponent } from './error/error.component';
 import { EventRouteGuard } from './events/event-details/event-route.guard';
 import { EventListResolverService } from './events/shared/event-list-resolver.service';
+import { AuthService } from './user/shared/auth.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CreateSessionComponent } from './events/create-session/create-session.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,12 @@ import { EventListResolverService } from './events/shared/event-list-resolver.se
     EventDetailsComponent,
     CreateEventComponent,
     ErrorComponent,
+    CreateSessionComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -37,7 +43,8 @@ import { EventListResolverService } from './events/shared/event-list-resolver.se
     { 
       provide: 'canDeactivateCreateEvent', 
       useValue: checkDirtyState 
-    }
+    },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
