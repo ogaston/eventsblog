@@ -1,6 +1,6 @@
+import { Routes } from "@angular/router";
 import { EventListComponent } from "./events/event-list/event-list.component";
 import { EventDetailsComponent } from "./events/event-details/event-details.component";
-import { Routes } from "@angular/router";
 import { CreateEventComponent } from "./events/create-event/create-event.component";
 import { ErrorComponent } from "./error/error.component";
 import { EventRouteGuard } from "./events/event-details/event-route.guard";
