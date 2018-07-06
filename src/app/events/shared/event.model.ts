@@ -1,25 +1,25 @@
 export interface IEvent {
-    id: Number
-    name: String
+    id: number
+    name: string
     date: Date
-    time: String
-    price: Number
-    imageUrl: String
+    time: string
+    price: number
+    imageUrl: string
     location?: {
-        address: String
-        city: String
-        country: String
+        address: string
+        city: string
+        country: string
     },
-    onlineUrl?: String,
+    onlineUrl?: string,
     sessions: ISession[]
 }
 
 export interface ISession {
-    id: Number
-    name: String
-    presenter: String
-    duration: Number
-    level: String
-    abstract: String
-    voters: String[]
+    id: number
+    name: string
+    presenter: string
+    duration: number
+    level: string
+    abstract: string
+    voters: string[]
 }

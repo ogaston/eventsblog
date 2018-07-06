@@ -23,6 +23,11 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
 import { DurationPipe } from './events/shared/duration.pipe';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 import { ModalTriggerDirective } from './common/simple-modal/modal-trigger.directive';
+import { UpvoteComponent } from './events/event-details/upvote/upvote.component';
+import { VoterService } from './events/event-details/upvote/voter.service';
+import { ValidateLocation } from './events/shared/validate-location.directive';
+import { HttpClientModule } from '@angular/common/http';
+
 
 let toastr:Toastr = window['toastr'];
 let jQuery:Object = window['$'];
@@ -42,12 +47,15 @@ let jQuery:Object = window['$'];
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective,
+    UpvoteComponent,
+    ValidateLocation,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [
     EventService, 
@@ -65,7 +73,8 @@ let jQuery:Object = window['$'];
       provide: 'canDeactivateCreateEvent', 
       useValue: checkDirtyState 
     },
-    AuthService
+    AuthService,
+    VoterService
   ],
   bootstrap: [AppComponent]
 })

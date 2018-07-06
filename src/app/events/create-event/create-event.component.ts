@@ -33,4 +33,8 @@ export class CreateEventComponent implements OnInit {
     this.router.navigate(['/events']);
   }
 
+  check(obj){
+    console.log(obj)
+  }
+
 }
