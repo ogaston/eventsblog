@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <ev-session-list [sortBy]="sortBy" [filterBy]="filterBy" *ngIf="!addMode" [sessions]="event?.sessions"></ev-session-list>
+    <ev-session-list [eventId]="event?.id" [sortBy]="sortBy" [filterBy]="filterBy" *ngIf="!addMode" [sessions]="event?.sessions"></ev-session-list>
     <ev-create-session *ngIf="addMode" (saveNewSession)="saveNewSession($event)"></ev-create-session>
 
   </div>

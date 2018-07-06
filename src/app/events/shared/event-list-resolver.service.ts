@@ -8,6 +8,6 @@ export class EventListResolverService implements Resolve<any> {
   constructor(private eventService: EventService) { }
 
   resolve(){
-    return this.eventService.getEvents().pipe(events => events)
+    return this.eventService.getEvents()
   }
 }

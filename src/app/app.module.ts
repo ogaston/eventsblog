@@ -27,6 +27,7 @@ import { UpvoteComponent } from './events/event-details/upvote/upvote.component'
 import { VoterService } from './events/event-details/upvote/voter.service';
 import { ValidateLocation } from './events/shared/validate-location.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { EventResolverService } from './events/shared/event-resolver.service';
 
 
 let toastr:Toastr = window['toastr'];
@@ -74,7 +75,8 @@ let jQuery:Object = window['$'];
       useValue: checkDirtyState 
     },
     AuthService,
-    VoterService
+    VoterService,
+    EventResolverService
   ],
   bootstrap: [AppComponent]
 })

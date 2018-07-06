@@ -14,10 +14,17 @@ export class LoginComponent {
   public userName
   public password 
   public mouseOverLogin
+  loginInvalid: boolean = false
 
   login(formProp) {
-    this.authService.loginUser(formProp.userName, formProp.password);
-    this.router.navigate(['events'])
+    this.authService.loginUser(formProp.userName, formProp.password)
+      .subscribe(res => {
+      if(!res){
+        this.loginInvalid = true
+      }else{
+        this.router.navigate(['events'])
+      }
+    })
   }
 
   cancel() {
